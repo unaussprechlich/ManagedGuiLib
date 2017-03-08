@@ -5,6 +5,7 @@
  *
  * ***************************************************************************
  */
+
 package net.unaussprechlich.managedgui.lib.child;
 
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
@@ -12,24 +13,22 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 import net.unaussprechlich.managedgui.lib.event.util.Event;
 import net.unaussprechlich.managedgui.lib.handler.MouseHandler;
 
-public interface IChild {
+/**
+ * IDoEventMethods Created by unaussprechlich on 18.12.2016.
+ * Description:
+ **/
+public interface IDoEventMethods {
 
-    void onClientTick();
-
-    void onRender(int xStart, int yStart);
-
-    void onChatMessage(ClientChatReceivedEvent e);
-
-    void onClick(MouseHandler.ClickType clickType);
-
-    void onScroll(int i);
-
-    void onMouseMove(int mX, int mY);
-
-    <T extends Event> void onEventBus(T event);
-
-    void onOpenGui(GuiOpenEvent event);
-
-    void onResize();
+    boolean doClientTick();
+    boolean doRender(int xStart, int yStart);
+    boolean doChatMessage(ClientChatReceivedEvent e);
+    boolean doMouseMove(int mX, int mY);
+    boolean doScroll(int i);
+    boolean doClick(MouseHandler.ClickType clickType);
+    <T extends Event> boolean doEventBus(T event);
+    boolean doOpenGUI(GuiOpenEvent e);
+    boolean doResize();
+    int getXStart();
+    int getYStart();
 
 }

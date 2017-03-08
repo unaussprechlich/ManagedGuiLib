@@ -9,8 +9,7 @@ package net.unaussprechlich.managedgui.lib.child;
 
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.client.event.GuiOpenEvent;
-import net.unaussprechlich.managedgui.lib.event.IDoEventMethods;
-import net.unaussprechlich.managedgui.lib.event.events.Event;
+import net.unaussprechlich.managedgui.lib.event.util.Event;
 import net.unaussprechlich.managedgui.lib.handler.MouseHandler;
 
 import java.util.ArrayList;
@@ -53,7 +52,7 @@ public abstract class ChildRegistry implements IDoEventMethods {
         if(!doRender(xStart, yStart)) return;
         if(childs.isEmpty()) return;
         for(IChild child : childs){
-            child.onRender(xStart + this.getXStart(), yStart +  this.getYStart());
+            child.onRender(this.getXStart(), this.getYStart());
         }
     }
 
@@ -92,4 +91,12 @@ public abstract class ChildRegistry implements IDoEventMethods {
         if(childs.isEmpty()) return;
         childs.forEach(child -> child.onOpenGui(e));
     }
+
+    public void onResize(){
+        if(!doResize()) return;
+        if(childs.isEmpty()) return;
+        childs.forEach(IChild::onResize);
+    }
+
+
 }

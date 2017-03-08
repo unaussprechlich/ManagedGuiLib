@@ -9,16 +9,15 @@
 package net.unaussprechlich.managedgui.lib.event.events;
 
 import net.unaussprechlich.managedgui.lib.event.EnumDefaultEvents;
-import net.unaussprechlich.managedgui.lib.event.util.EnumTime;
 import net.unaussprechlich.managedgui.lib.event.util.Event;
 
 /**
- * TimeEvent Created by unaussprechlich on 20.12.2016.
+ * ScreenResizeEvent Created by Alexander on 24.02.2017.
  * Description:
  **/
-public class TimeEvent extends Event {
+public class ScreenResizeEvent extends Event {
 
-    public TimeEvent(EnumTime data) {
-        super(EnumDefaultEvents.TIME.get(), data);
+    public ScreenResizeEvent() {
+        super(EnumDefaultEvents.SCREEN_RESIZE.get(), null);
     }
 }

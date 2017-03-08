@@ -9,16 +9,15 @@
 package net.unaussprechlich.managedgui.lib.event.events;
 
 import net.unaussprechlich.managedgui.lib.event.EnumDefaultEvents;
-import net.unaussprechlich.managedgui.lib.event.util.EnumTime;
 import net.unaussprechlich.managedgui.lib.event.util.Event;
 
 /**
- * TimeEvent Created by unaussprechlich on 20.12.2016.
+ * KeyPressedEvent Created by Alexander on 07.03.2017.
  * Description:
  **/
-public class TimeEvent extends Event {
+public class KeyPressedEvent extends Event<String> {
 
-    public TimeEvent(EnumTime data) {
-        super(EnumDefaultEvents.TIME.get(), data);
+    public KeyPressedEvent(String data) {
+        super(EnumDefaultEvents.KEY_PRESSED.get(), data);
     }
 }
